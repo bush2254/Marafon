@@ -1,0 +1,85 @@
+﻿<Page x:Class="WpfApp12.Page3"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp12"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Page3">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="110"/>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Регистрация на марафон"  VerticalAlignment="Center" FontSize="25" HorizontalAlignment="Center" Grid.ColumnSpan="4"/>
+        <TextBlock Text="Пожалуйста заполните всю информацию, чтобы зарегистрироваться на Skills" Grid.Row="1" HorizontalAlignment="Center" FontSize="15" VerticalAlignment="Bottom" Grid.ColumnSpan="4"/>
+        <TextBlock Text ="Marathon 2016 проводимом в Москве. Russia. С вами свяжутся после" Grid.Row="2" HorizontalAlignment="Center" FontSize="15" VerticalAlignment="Bottom" Grid.ColumnSpan="4"/>
+        <TextBlock Text ="регистрации для уточнения оплаты и другой информации." Grid.Row="3" HorizontalAlignment="Center" FontSize="15" VerticalAlignment="Bottom" Grid.ColumnSpan="4"/>
+        <TextBlock Text="Вид марафона" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1"/>
+        <TextBlock Text="Варианты комплектов" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="20" Grid.ColumnSpan="2" Grid.Column="2"/>
+        <CheckBox Content="42km Полный марафон($145)" Grid.Row="5" HorizontalAlignment="Left" Grid.Column="1" VerticalAlignment="Bottom" FontSize="15"/>
+        <CheckBox Content="21km Полумарафон ($75)" Grid.Row="6" HorizontalAlignment="Left" Grid.Column="1" VerticalAlignment="Bottom"/>
+        <CheckBox Content="5km Малая дистанция ($20)" Grid.Row="7" HorizontalAlignment="Left" Grid.Column="1" VerticalAlignment="Bottom" FontSize="15"/>
+        <RadioButton Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="11">
+            <RadioButton.Content>
+                <TextBlock><Bold>Вариант A ($0):</Bold> Номер бегуна + RFID браслет.</TextBlock>
+            </RadioButton.Content>
+        </RadioButton>
+        <RadioButton Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="11">
+            <RadioButton.Content>
+                <TextBlock><Bold>Вариант B ($20):</Bold> вариант A + бейсболка + бутылка воды.</TextBlock>
+            </RadioButton.Content>
+        </RadioButton>
+        <RadioButton Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="11">
+            <RadioButton.Content>
+                <TextBlock><Bold>Вариант C ($45): ($0):</Bold>Вариант B+футболка + сувенирный буклет.</TextBlock>
+            </RadioButton.Content>
+        </RadioButton>
+        <TextBlock Text="Детали спонсорства"  HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="8"/>
+        <Grid Grid.Row="9" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Взнос:" VerticalAlignment="Bottom" FontSize="15" HorizontalAlignment="Right" Margin="0 0 10 5"/>
+            <TextBlock Text="Сумма взноса:" VerticalAlignment="Bottom" FontSize="15" HorizontalAlignment="Right" Grid.Row="1" Margin=" 0 0 10 5"/>
+            <ComboBox x:Name="ComboBox_2" Grid.Column="1" SelectedIndex="0" HorizontalAlignment="Left" Width="180" Height="20" VerticalAlignment="Bottom" Margin="10 0 0 5" Foreground="#999999" VerticalContentAlignment="Center">
+                <ComboBoxItem>Фонд кошек</ComboBoxItem>
+                <ComboBoxItem>Фонд добра</ComboBoxItem>
+                <ComboBoxItem>Фонд помощи</ComboBoxItem>
+            </ComboBox>
+            <TextBox Grid.Column="1" HorizontalAlignment="Left" Width="180" Height="20" VerticalAlignment="Bottom" Margin="10 0 0 5" Grid.Row="1"  LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus" Tag="$500" Foreground="#999999" Text="$500" VerticalContentAlignment="Center" FontSize="15"/>
+        </Grid>
+        <Grid Grid.Row="9" Grid.ColumnSpan="2" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Регистрационный взнос" VerticalAlignment="Top" FontSize="20" HorizontalAlignment="Center"/>
+            <TextBlock Text="$185" VerticalAlignment="Center" FontSize="50" HorizontalAlignment="Center" Grid.Row="1"  Foreground="#999999"/>
+        </Grid>
+        <Button Click="BtnOKClick" Grid.Row="10" Content="Регистрация" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="15" HorizontalContentAlignment="Center" Width="100" Height="30"  Margin="5"/>
+        <Button Click="Back_2" Grid.Row="10" Content="Отмена" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="15" HorizontalContentAlignment="Center" Width="100" Height="30" Margin="5"/>
+    </Grid>
+</Page>

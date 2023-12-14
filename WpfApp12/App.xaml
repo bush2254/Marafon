@@ -1,0 +1,58 @@
+﻿<Application x:Class="WpfApp12.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WpfApp12"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <SolidColorBrush x:Key="main" Color="White"/>
+        <SolidColorBrush x:Key="additional" Color="LightPink"/>
+        <SolidColorBrush x:Key="ButtoColor" Color="LightGreen"/>
+        <SolidColorBrush x:Key="ButtoColor_2" Color="LightGreen"/>
+        <Style TargetType="Grid">
+            <Setter Property="Background" Value="LightBlue"/>
+        </Style>
+        <Style TargetType="Grid" x:Key="Grid">
+            <Setter Property="Background" Value="{StaticResource additional}"/>
+        </Style>
+        <Style TargetType="Button" x:Key="Button_2">
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Style.Resources>
+            <Setter Property="Background" Value="{StaticResource ButtoColor_2}"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource ButtoColor}"/>
+            <Setter Property="Foreground" Value="{StaticResource main}"/>
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="TextBlock">
+            <Setter Property="Background" Value="{StaticResource additional}"/>
+            <Setter Property="Foreground" Value="{StaticResource main}"/>
+            <Setter Property="FontFamily" Value="Open Sans Semibold"/>
+        </Style>
+        <Style TargetType="Button" x:Key="Foto">
+            <Setter Property="Background" Value="{StaticResource main}"/>
+        </Style>
+        <Style TargetType="Window">
+            <Setter Property="FontFamily" Value="Open Sans Light"/>
+        </Style>
+        <Style TargetType="Page">
+            <Setter Property="FontFamily" Value="Open Sans Light"/>
+        </Style>
+        <Style TargetType="Button" x:Key="ButtonLogo">
+            <Setter Property="Background" Value="Orange"/>
+            <Setter Property="Foreground" Value="#902020"/>
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="330"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+    </Application.Resources>
+</Application>
